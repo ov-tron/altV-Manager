@@ -28,7 +28,8 @@ echo "======================="
 echo ""
 npm run start --silent
 export launcherCommand=altv-server
-for a in resources/*
-    do export "launcherCommand=$launcherCommand --extra-res-folder $a"
+for a in resources/\[*\]
+do
+    export "launcherCommand=$launcherCommand --extra-res-folder $a"
 done
 $launcherCommand
