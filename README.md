@@ -5,8 +5,11 @@
 
 ### Keypoints:
 > ***Multi resource/categorization replication on alt:V based on MTA.***
+
 > ***Enhances project structure by resource categorization.***
+
 > ***Automated resource category detector.***
+
 > ***Automated server installer, updater and launcher.***
 
 ### Dependencies:
