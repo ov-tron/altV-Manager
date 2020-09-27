@@ -1,3 +1,5 @@
+#!/bin/bash
+set echo off
 printf "\033[33m"
 echo "***************************************************************"
 echo  "* Script: server-launcher.sh"
@@ -18,11 +20,10 @@ ncu -u --silent
 printf "\033[33m"
 npm update --silent
 printf "\033[33m"
-
-echo
+echo ""
 echo "==> Launching Server"
 echo "======================="
-echo
+echo ""
 npm run start --silent
 export launcherCommand=altv-server
 for a in ('dir "./resources" /b /a:d ^| findstr "[^[$]]"') do (
