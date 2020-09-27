@@ -16,9 +16,10 @@
   - **NodeJS [https://nodejs.org/en/download/current]**
 
 ### Installation:
-  > ***Run `server-launcher.bat` and it will automate everything up!***
+  > ***Windows: Run `server-launcher.bat` and it will automate everything up!***
+  > ***Linux: Run `server-launcher.sh` and it will automate everything up!***
 
 ### Usage:
   - **You can create resource category under `resources` folder enbounded within `[]`; Example: `[YourCategoryHere]`.**
-  - **Start your server via `server-launcher.bat` and it will auto-detect and setup everything for you!**
-  - **WARNING: _Starting server via `altv-server.exe` won't detect the resource categories!_**
+  - **Start your server via `server-launcher` and it will auto-detect and setup everything for you!**
+  - **WARNING: _Starting server via `altv-server` won't detect the resource categories!_**
