@@ -27,7 +27,7 @@ color 0e
 @echo =======================
 @echo:
 call npm run start --silent
-set launcherCommand=altv-server.exe
+set launcherCommand=altv-server
 for /F "delims=" %%a in ('dir "./resources" /b /a:d ^| findstr "[^[$]]"') do (
     set "launcherCommand=!launcherCommand! --extra-res-folder resources/%%a"
 )
