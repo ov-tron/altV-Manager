@@ -17,6 +17,7 @@
 
 ### Installation:
   > ***Install your server using `npm run install`.***
+  
   > ***After installation launch your server via `./server-launcher` and it will automate everything up!***
 
 ### Usage:
