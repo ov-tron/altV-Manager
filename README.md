@@ -16,8 +16,8 @@
   - **NodeJS [https://nodejs.org/en/download/current]**
 
 ### Installation:
-  > ***Install your server using `npm run install`.***
-  
+  > ***Install your server using `npm run server:install`.***
+
   > ***After installation launch your server via `./server-launcher` and it will automate everything up!***
 
 ### Usage:
