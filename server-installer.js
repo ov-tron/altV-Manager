@@ -93,7 +93,7 @@ function displayLogMessage(message) {
     displayLogMessage("\n")
     
     // TODO: CREATE HERE `server-launcher` using script :D not within respo
-    displayLogMessage("\n\n==> Server successfully installed! [Hint: Use ./server-launcher to launch your server!" + "]")
+    displayLogMessage("\n\n==> Server successfully installed! [Hint: Use ./server-launcher to launch your server!]")
     process.exit(0)
 
 }) ()
