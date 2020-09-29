@@ -12,8 +12,8 @@ echo "***************************************************************"
 echo ""
 
 echo ""
-echo "==> Installing Server"
-echo "======================="
+echo "==> Updating Server"
+echo "===================="
 echo ""
 npm install --silent --no-warnings
 printf "\033[33m"
@@ -24,7 +24,7 @@ printf "\033[33m"
 
 echo ""
 echo "==> Launching Server"
-echo "======================="
+echo "====================="
 echo ""
 npm run start --silent
 export launcherCommand=altv-server

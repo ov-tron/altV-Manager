@@ -12,8 +12,8 @@ color 0e
 @echo:
 
 @echo:
-@echo ==^> Installing Server
-@echo =======================
+@echo ==^> Updating Server
+@echo ====================
 @echo:
 call npm install --silent --no-warnings
 color 0e
