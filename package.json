@@ -5,7 +5,7 @@
     "author": "OvileAmriam",
     "type": "module",
     "dependencies": {
-        "download": "^7.1.0"
+        "download": "^8.0.0"
     },
     "scripts": {
         "start:web": "",
