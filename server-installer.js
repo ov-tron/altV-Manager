@@ -60,7 +60,7 @@ function displayLogMessage(message) {
 
 (async function onInstallServer() {
 
-    displayLogMessage("\033c")
+    console.clear()
     displayLogMessage("\n***************************************************************")
     displayLogMessage("\n* Script: server-installer.js")
     displayLogMessage("\n* Server: -")
