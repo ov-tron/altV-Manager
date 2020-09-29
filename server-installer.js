@@ -15,7 +15,6 @@
 const download = require("download")
 const serverPlatform = process.platform === "win32" ? "windows" : "linux"
 const serverAssets = [
-    /*
     {
         windows: "https://cdn.altv.mp/server/release/x64_win32/data/vehmodels.bin",
         linux: "https://cdn.altv.mp/server/release/x64_linux/data/vehmodels.bin",
@@ -41,7 +40,6 @@ const serverAssets = [
         linux: "https://cdn.altv.mp/server/release/x64_linux/altv-server",
         filePath: "."
     },
-        */
     {
         windows: "https://cdn.altv.mp/js-module/release/x64_win32/update.json",
         linux: "https://cdn.altv.mp/js-module/release/x64_linux/update.json",
