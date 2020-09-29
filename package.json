@@ -10,7 +10,7 @@
     "scripts": {
         "start:web": "",
         "start": "run-s start:*",
-        "install": "node ./server-installer.js"
+        "install": "npm install --silent --no-warnings && node ./server-installer.js"
     },
     "devDependencies": {
         "npm-run-all": "^4.1.5",
