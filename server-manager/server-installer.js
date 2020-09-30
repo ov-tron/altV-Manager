@@ -71,8 +71,7 @@ async function onInstallServer() {
     serverLogger.displayServerLog("\n==============================")
     await new Promise(async (resolve, reject) => {
         for (var assetIndex = 0; assetIndex < serverAssets.length; assetIndex++) {
-            serverLogger.displayServerLog("\n\n")
-            serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Downloading]")
+            serverLogger.displayServerLog("\n\n==> " + serverAssets[assetIndex][serverPlatform] + " [Downloading]")
             await download(serverAssets[assetIndex][serverPlatform], serverAssets[assetIndex].filePath)
                 .then(() => {
                     process.stdout.clearLine()

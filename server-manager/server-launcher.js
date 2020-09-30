@@ -40,7 +40,7 @@ async function onLaunchServer() {
 
     await runAll(["server:update"], {parallel: false})
         .then(async () => {
-            serverLogger.displayServerLog("\n==> Server successfully launched!")
+            serverLogger.displayServerLog("\n==> Server successfully launched!\n")
             var launcherPrefix = serverPlatform === "windows" ?  "@echo off\ncall npm run start --silent" : "#!/bin/bash\nset echo off\nnpm run start --silent"
             var launcherCommand = "altv-server"
             await new Promise((resolve, reject) => {
@@ -63,7 +63,7 @@ async function onLaunchServer() {
             })
         })
         .catch(() => {
-            serverLogger.displayServerLog("\n==> Server launch failed!")
+            serverLogger.displayServerLog("\n==> Server launch failed!\n")
         })
     process.exit(0)
 
