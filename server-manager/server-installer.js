@@ -1,5 +1,5 @@
 /***************************************************************
- * Script: server-installer.js
+ * Script: server-manager:server-installer.js
  * Server: -
  * Author: OvileAmriam
  * Developer: -
@@ -16,6 +16,7 @@ const download = require("download")
 const serverLogger = require("./server-logger.js")
 const serverPlatform = process.platform === "win32" ? "windows" : "linux"
 const serverAssets = [
+    /*
     {
         windows: "https://cdn.altv.mp/server/release/x64_win32/data/vehmodels.bin",
         linux: "https://cdn.altv.mp/server/release/x64_linux/data/vehmodels.bin",
@@ -36,6 +37,7 @@ const serverAssets = [
         linux: "https://cdn.altv.mp/js-module/release/x64_linux/modules/js-module/libnode.so.72",
         filePath: "./modules/js-module"
     },
+    */
     {
         windows: "https://cdn.altv.mp/server/release/x64_win32/altv-server.exe",
         linux: "https://cdn.altv.mp/server/release/x64_linux/altv-server",

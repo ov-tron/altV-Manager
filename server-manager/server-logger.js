@@ -1,5 +1,5 @@
 /***************************************************************
- * Script: server-logger.js
+ * Script: server-manager:server-logger.js
  * Server: -
  * Author: OvileAmriam
  * Developer: -
