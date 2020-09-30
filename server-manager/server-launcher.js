@@ -12,10 +12,11 @@
  * Imports *
 *************/
 
+const fs = require("fs")
+const path = require("path")
 const runAll = require("npm-run-all")
-const fs = require('fs')
-const path = require('path')
 const serverLogger = require("./server-logger.js")
+const serverPlatform = serverLogger.getServerPlatform()
 
 
 /******************************
