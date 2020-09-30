@@ -13,6 +13,7 @@
 *************/
 
 const download = require("download")
+const serverLogger = require("./server-logger.js")
 const serverPlatform = process.platform === "win32" ? "windows" : "linux"
 const serverAssets = [
     {
@@ -52,48 +53,43 @@ const serverAssets = [
  * Function: Installs Server *
 *******************************/
 
-function displayLogMessage(message) {
-
-    return process.stdout.write("\x1b[93m" + message + "\x1b[39m")
-
-}
-
-(async function onInstallServer() {
+async function onInstallServer() {
 
     console.clear()
-    displayLogMessage("\n***************************************************************")
-    displayLogMessage("\n* Script: server-installer.js")
-    displayLogMessage("\n* Server: -")
-    displayLogMessage("\n* Author: OvileAmriam")
-    displayLogMessage("\n* Developer: -")
-    displayLogMessage("\n* DOC: 25/09/2020 (OvileAmriam)")
-    displayLogMessage("\n* Desc: Automated Server Installer/Updater/Launcher")
-    displayLogMessage("\n***************************************************************")
+    serverLogger.displayServerLog("\n***************************************************************")
+    serverLogger.displayServerLog("\n* Script: server-installer.js")
+    serverLogger.displayServerLog("\n* Server: -")
+    serverLogger.displayServerLog("\n* Author: OvileAmriam")
+    serverLogger.displayServerLog("\n* Developer: -")
+    serverLogger.displayServerLog("\n* DOC: 25/09/2020 (OvileAmriam)")
+    serverLogger.displayServerLog("\n* Desc: Automated Server Installer/Updater/Launcher")
+    serverLogger.displayServerLog("\n***************************************************************")
 
-    displayLogMessage("\n\n\n==> Downloading Server FIles")
-    displayLogMessage("\n=============================\n")
+    serverLogger.displayServerLog("\n\n\n==> Downloading Server FIles")
+    serverLogger.displayServerLog("\n=============================\n")
     await new Promise(async (resolve, reject) => {
         for (var assetIndex = 0; assetIndex < serverAssets.length; assetIndex++) {
-            displayLogMessage("\n")
-            displayLogMessage("==> " + serverAssets[assetIndex][serverPlatform] + " [Downloading]")
+            serverLogger.displayServerLog("\n")
+            serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Downloading]")
             await download(serverAssets[assetIndex][serverPlatform], serverAssets[assetIndex].filePath)
                 .then(() => {
                     process.stdout.clearLine()
                     process.stdout.cursorTo(0)
-                    displayLogMessage("==> " + serverAssets[assetIndex][serverPlatform] + " [Download Successful]")
+                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Download Successful]")
                 })
                 .catch(() => {
                     process.stdout.clearLine()
                     process.stdout.cursorTo(0)
-                    displayLogMessage("==> " + serverAssets[assetIndex][serverPlatform] + " [Download Failed]")
+                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Download Failed]")
                 })
         }
         resolve()
     })
-    displayLogMessage("\n")
-    
+    serverLogger.displayServerLog("\n")
+
     // TODO: CREATE HERE `server-launcher` using script :D not within respo
-    displayLogMessage("\n\n==> Server successfully installed! [Hint: Use ./server-launcher to launch your server!]")
+    serverLogger.displayServerLog("\n\n==> Server successfully installed! [Hint: Use ./server-launcher to launch your server!]")
     process.exit(0)
 
-}) ()
+}
+onInstallServer()

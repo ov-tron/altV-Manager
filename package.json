@@ -8,7 +8,7 @@
         "download": "^8.0.0"
     },
     "scripts": {
-        "start:web": "",
+        "start:server": "node ./server-launcher.js",
         "start": "run-s start:*",
         "server:install": "npm install --silent --no-warnings && node ./server-installer.js"
     },
