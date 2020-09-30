@@ -36,7 +36,7 @@ function displayServerLog(log) {
 
 module.exports = {
 
-    getServerPlatform
+    getServerPlatform,
     displayServerLog
 
 }
