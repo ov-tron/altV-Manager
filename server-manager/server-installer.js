@@ -14,7 +14,7 @@
 
 const download = require("download")
 const serverLogger = require("./server-logger.js")
-const serverPlatform = process.platform === "win32" ? "windows" : "linux"
+const serverPlatform = serverLogger.getServerPlatform()
 const serverAssets = [
     /*
     {

@@ -8,6 +8,17 @@
 ***************************************************************/
 
 
+/******************************************
+ * Function: Retrieves Server's Platform *
+*******************************************/
+
+function getServerPlatform() {
+
+    return process.platform === "win32" ? "windows" : "linux"
+    
+}
+
+
 /**********************************
  * Function: Displays Server Log *
 ***********************************/
@@ -25,6 +36,7 @@ function displayServerLog(log) {
 
 module.exports = {
 
+    getServerPlatform
     displayServerLog
 
 }
