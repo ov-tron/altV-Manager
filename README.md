@@ -25,4 +25,4 @@
   
   - ***Start your server via `server-launcher` and it will auto-detect and setup everything for you!***
 
-  > ***WARNING: _Starting server via `altv-server` won't detect the resource categories!_***
+  - ***WARNING: _Starting server via `altv-server` won't detect the resource categories!_***
