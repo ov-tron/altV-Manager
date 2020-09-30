@@ -89,7 +89,7 @@ async function onInstallServer() {
     serverLogger.displayServerLog("\n")
 
     // TODO: CREATE HERE `server-launcher` using script :D not within respo
-    serverLogger.displayServerLog("\n\n==> Server successfully installed! [Hint: Use ./server-launcher to launch your server!]")
+    serverLogger.displayServerLog("\n\n==> Server successfully installed! [Hint: Use server-launcher to launch your server!]")
     process.exit(0)
 
 }
