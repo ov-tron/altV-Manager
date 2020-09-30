@@ -20,7 +20,10 @@ const serverPlatform = serverLogger.getServerPlatform()
 const serverAssets = require("./server-assets.js").serverAssets
 
 
-/** --TODO: COMMENT HERE :d */
+/*********************************************
+ * Function: Retrieves Server's Update Data *
+**********************************************/
+
 async function getServerUpdateData() {
 
     var isServerUpdated = false, updateAssetIndex = false

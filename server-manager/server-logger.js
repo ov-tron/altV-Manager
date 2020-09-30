@@ -20,7 +20,7 @@ function getServerPlatform() {
 
 
 /***********************************************
- * Function: Retrieves Server Launcher's Data *
+ * Function: Retrieves Server's Launcher Data *
 ************************************************/
 
 function getServerLauncherData() {

@@ -37,7 +37,7 @@ async function onInstallServer() {
     serverLogger.displayServerLog("\n* Desc: Automated Server Installer/Updater/Launcher")
     serverLogger.displayServerLog("\n***************************************************************")
 
-    var serverUpdateData = await serverUpdater.getServerUpdateData()
+    const serverUpdateData = await serverUpdater.getServerUpdateData()
     if (serverUpdateData && !serverUpdateData[0]) {
         serverLogger.displayServerLog("\n\n\n==> Downloading Server Assets")
         serverLogger.displayServerLog("\n==============================")
@@ -68,7 +68,7 @@ async function onInstallServer() {
     } else {
         serverLogger.displayServerLog("\n\n\n==> Server already upto date!")
     }
-    serverLogger.displayServerLog("\n\n==> Hint: Use server-launcher to launch your server!")
+    serverLogger.displayServerLog("\n\n==> Hint: Use server-launcher to launch your server!\n")
     process.exit(0)
 
 }

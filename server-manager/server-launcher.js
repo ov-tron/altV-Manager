@@ -16,6 +16,7 @@ const fs = require("fs")
 const path = require("path")
 const runAll = require("npm-run-all")
 const serverLogger = require("./server-logger.js")
+const serverUpdater = require("./server-updater.js")
 const serverLauncherData = serverLogger.getServerLauncherData()
 
 
@@ -37,9 +38,14 @@ async function onLaunchServer() {
 
     serverLogger.displayServerLog("\n\n\n==> Launching Server")
     serverLogger.displayServerLog("\n=====================\n")
+    const serverUpdateData = await serverUpdater.getServerUpdateData()
+    if (serverUpdateData && !serverUpdateData[0]) {
+        serverLogger.displayServerLog("\n==> Server update available!")
+        serverLogger.displayServerLog("\n\n==> Hint: Use npm run server:install to update to latest build!\n")
+    }
     await runAll(["server:update"], {parallel: false})
         .then(async () => {
-            serverLogger.displayServerLog("\n==> Server successfully launched!\n")
+            serverLogger.displayServerLog("\n==> Server successfully launched!\n\n")
             await new Promise((resolve, reject) => {
                 fs.readdir(path.join(__dirname, '../resources'), (error, directoryList) => { 
                     if (!error) {
@@ -60,7 +66,7 @@ async function onLaunchServer() {
             })
         })
         .catch(() => {
-            serverLogger.displayServerLog("\n==> Server launch failed!\n")
+            serverLogger.displayServerLog("\n==> Server launch failed!\n\n")
         })
     process.exit(0)
 
