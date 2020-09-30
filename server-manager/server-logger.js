@@ -28,7 +28,8 @@ function getServerLauncherData() {
     const serverPlatform = getServerPlatform()
     const launcherFormat = serverPlatform === "windows" ?  "server-launcher.bat" : "server-launcher.sh"
     const launcherPrefix = serverPlatform === "windows" ?  "@echo off\ncall npm run start --silent" : "#!/bin/bash\nset echo off\nnpm run start --silent"
-    return [launcherFormat, launcherPrefix]
+    const launcherCommand = "altv-server"
+    return [launcherFormat, launcherPrefix, launcherCommand]
 
 }
 

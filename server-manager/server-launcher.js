@@ -41,14 +41,13 @@ async function onLaunchServer() {
     await runAll(["server:update"], {parallel: false})
         .then(async () => {
             serverLogger.displayServerLog("\n==> Server successfully launched!\n")
-            var launcherCommand = "altv-server"
             await new Promise((resolve, reject) => {
                 fs.readdir(path.join(__dirname, '../resources'), (error, directoryList) => { 
                     if (!error) {
                         for(var i = 0; i < directoryList.length; i++) {
                             const directoryName = directoryList[i]
                             if (directoryName[0] == "[" && directoryName[directoryName.length - 1] == "]") {
-                                launcherCommand = launcherCommand + " --extra-res-folder resources/" + directoryName
+                                serverLauncherData[3] = serverLauncherData[3] + " --extra-res-folder resources/" + directoryName
                             }
                         }
                     }
@@ -56,7 +55,7 @@ async function onLaunchServer() {
                 })
             })
             await new Promise((resolve, reject) => {
-                fs.writeFile(serverLauncherData[1], serverLauncherData[2] + "\n" + launcherCommand, () => {
+                fs.writeFile(serverLauncherData[1], serverLauncherData[2] + "\n" + serverLauncherData[3], () => {
                     resolve()
                 })
             })
