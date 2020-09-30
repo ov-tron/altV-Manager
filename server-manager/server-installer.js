@@ -12,6 +12,7 @@
  * Imports *
 *************/
 
+const fs = require("fs")
 const download = require("download")
 const serverLogger = require("./server-logger.js")
 const serverPlatform = serverLogger.getServerPlatform()
