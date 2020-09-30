@@ -1,5 +1,5 @@
 /***************************************************************
- * Script: server-manager:server-launcher.js
+ * Script: server-manager: server-launcher.js
  * Server: -
  * Author: OvileAmriam
  * Developer: -

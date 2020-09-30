@@ -1,5 +1,5 @@
 /***************************************************************
- * Script: server-manager:server-installer.js
+ * Script: server-manager: server-installer.js
  * Server: -
  * Author: OvileAmriam
  * Developer: -
