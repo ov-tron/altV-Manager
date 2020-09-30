@@ -15,40 +15,10 @@
 const fs = require("fs")
 const download = require("download")
 const serverLogger = require("./server-logger.js")
+const serverUpdater = require("./server-updater.js")
 const serverPlatform = serverLogger.getServerPlatform()
 const serverLauncherData = serverLogger.getServerLauncherData()
-const serverAssets = [
-    {
-        windows: "https://cdn.altv.mp/server/release/x64_win32/data/vehmodels.bin",
-        linux: "https://cdn.altv.mp/server/release/x64_linux/data/vehmodels.bin",
-        filePath: "./data"
-    },
-    {
-        windows: "https://cdn.altv.mp/server/release/x64_win32/data/vehmods.bin",
-        linux: "https://cdn.altv.mp/server/release/x64_linux/data/vehmods.bin",
-        filePath: "./data"
-    },
-    {
-        windows: "https://cdn.altv.mp/js-module/release/x64_win32/modules/js-module/js-module.dll",
-        linux: "https://cdn.altv.mp/js-module/release/x64_linux/modules/js-module/libjs-module.so",
-        filePath: "./modules/js-module"
-    },
-    {
-        windows: "https://cdn.altv.mp/js-module/release/x64_win32/modules/js-module/libnode.dll",
-        linux: "https://cdn.altv.mp/js-module/release/x64_linux/modules/js-module/libnode.so.72",
-        filePath: "./modules/js-module"
-    },
-    {
-        windows: "https://cdn.altv.mp/server/release/x64_win32/altv-server.exe",
-        linux: "https://cdn.altv.mp/server/release/x64_linux/altv-server",
-        filePath: "."
-    },
-    {
-        windows: "https://cdn.altv.mp/js-module/release/x64_win32/update.json",
-        linux: "https://cdn.altv.mp/js-module/release/x64_linux/update.json",
-        filePath: "."
-    }
-]
+const serverAssets = require("./server-assets.js").serverAssets
 
 
 /******************************
@@ -67,32 +37,38 @@ async function onInstallServer() {
     serverLogger.displayServerLog("\n* Desc: Automated Server Installer/Updater/Launcher")
     serverLogger.displayServerLog("\n***************************************************************")
 
-    serverLogger.displayServerLog("\n\n\n==> Downloading Server Assets")
-    serverLogger.displayServerLog("\n==============================")
-    await new Promise(async (resolve, reject) => {
-        for (var assetIndex = 0; assetIndex < serverAssets.length; assetIndex++) {
-            serverLogger.displayServerLog("\n\n==> " + serverAssets[assetIndex][serverPlatform] + " [Downloading]")
-            await download(serverAssets[assetIndex][serverPlatform], serverAssets[assetIndex].filePath)
-                .then(() => {
-                    process.stdout.clearLine()
-                    process.stdout.cursorTo(0)
-                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Downloaded]")
-                })
-                .catch(() => {
-                    process.stdout.clearLine()
-                    process.stdout.cursorTo(0)
-                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Failed]")
-                })
-        }
-        resolve()
-    })
-    serverLogger.displayServerLog("\n")
-    await new Promise((resolve, reject) => {
-        fs.writeFile(serverLauncherData[0], serverLauncherData[1] + "\n" + serverLauncherData[2], () => {
+    var serverUpdateData = await serverUpdater.getServerUpdateData()
+    if (serverUpdateData && !serverUpdateData[0]) {
+        serverLogger.displayServerLog("\n\n\n==> Downloading Server Assets")
+        serverLogger.displayServerLog("\n==============================")
+        await new Promise(async (resolve, reject) => {
+            for (var assetIndex = 0; assetIndex < serverAssets.length; assetIndex++) {
+                serverLogger.displayServerLog("\n\n==> " + serverAssets[assetIndex][serverPlatform] + " [Downloading]")
+                await download(serverAssets[assetIndex][serverPlatform], serverAssets[assetIndex].filePath)
+                    .then(() => {
+                        process.stdout.clearLine()
+                        process.stdout.cursorTo(0)
+                        serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Downloaded]")
+                    })
+                    .catch(() => {
+                        process.stdout.clearLine()
+                        process.stdout.cursorTo(0)
+                        serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Failed]")
+                    })
+            }
             resolve()
         })
-    })
-    serverLogger.displayServerLog("\n\n==> Server successfully installed! [Hint: Use server-launcher to launch your server!]")
+        serverLogger.displayServerLog("\n")
+        await new Promise((resolve, reject) => {
+            fs.writeFile(serverLauncherData[0], serverLauncherData[1] + "\n" + serverLauncherData[2], () => {
+                resolve()
+            })
+        })
+        serverLogger.displayServerLog("\n\n==> Server successfully installed!")
+    } else {
+        serverLogger.displayServerLog("\n\n\n==> Server already upto date!")
+    }
+    serverLogger.displayServerLog("\n\n==> Hint: Use server-launcher to launch your server!")
     process.exit(0)
 
 }

@@ -37,7 +37,6 @@ async function onLaunchServer() {
 
     serverLogger.displayServerLog("\n\n\n==> Launching Server")
     serverLogger.displayServerLog("\n=====================\n")
-
     await runAll(["server:update"], {parallel: false})
         .then(async () => {
             serverLogger.displayServerLog("\n==> Server successfully launched!\n")
