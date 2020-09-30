@@ -57,7 +57,7 @@ async function onInstallServer() {
 
     console.clear()
     serverLogger.displayServerLog("\n***************************************************************")
-    serverLogger.displayServerLog("\n* Script: server-installer.js")
+    serverLogger.displayServerLog("\n* Script: server-installer")
     serverLogger.displayServerLog("\n* Server: -")
     serverLogger.displayServerLog("\n* Author: OvileAmriam")
     serverLogger.displayServerLog("\n* Developer: -")
@@ -65,8 +65,8 @@ async function onInstallServer() {
     serverLogger.displayServerLog("\n* Desc: Automated Server Installer/Updater/Launcher")
     serverLogger.displayServerLog("\n***************************************************************")
 
-    serverLogger.displayServerLog("\n\n\n==> Downloading Server FIles")
-    serverLogger.displayServerLog("\n=============================\n")
+    serverLogger.displayServerLog("\n\n\n==> Downloading Server Assets")
+    serverLogger.displayServerLog("\n==============================\n")
     await new Promise(async (resolve, reject) => {
         for (var assetIndex = 0; assetIndex < serverAssets.length; assetIndex++) {
             serverLogger.displayServerLog("\n")
