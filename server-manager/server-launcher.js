@@ -41,7 +41,7 @@ async function onLaunchServer() {
     await runAll(["server:update"], {parallel: false})
         .then(async () => {
             serverLogger.displayServerLog("\n==> Server successfully launched!")
-            var launcherPrefix = "@echo off\ncall npm run start --silent\n" //TODO: THIS MUST BE BASED ON WHAT PLATFORM IT IS I GUESS? :D
+            var launcherPrefix = serverPlatform === "windows" ?  "@echo off\ncall npm run start --silent" : "#!/bin/bash\nset echo off\nnpm run start --silent"
             var launcherCommand = "altv-server"
             await new Promise((resolve, reject) => {
                 fs.readdir(path.join(__dirname, '../resources'), (error, directoryList) => { 
@@ -57,7 +57,7 @@ async function onLaunchServer() {
                 })
             })
             await new Promise((resolve, reject) => {
-                fs.writeFile("server-launcher.bat", launcherPrefix + launcherCommand, () => {
+                fs.writeFile("server-launcher.bat", launcherPrefix + "\n" + launcherCommand, () => {
                     resolve()
                 })
             })
