@@ -66,21 +66,21 @@ async function onInstallServer() {
     serverLogger.displayServerLog("\n***************************************************************")
 
     serverLogger.displayServerLog("\n\n\n==> Downloading Server Assets")
-    serverLogger.displayServerLog("\n==============================\n")
+    serverLogger.displayServerLog("\n==============================")
     await new Promise(async (resolve, reject) => {
         for (var assetIndex = 0; assetIndex < serverAssets.length; assetIndex++) {
-            serverLogger.displayServerLog("\n")
+            serverLogger.displayServerLog("\n\n")
             serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Downloading]")
             await download(serverAssets[assetIndex][serverPlatform], serverAssets[assetIndex].filePath)
                 .then(() => {
                     process.stdout.clearLine()
                     process.stdout.cursorTo(0)
-                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Download Successful]")
+                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Downloaded]")
                 })
                 .catch(() => {
                     process.stdout.clearLine()
                     process.stdout.cursorTo(0)
-                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Download Failed]")
+                    serverLogger.displayServerLog("==> " + serverAssets[assetIndex][serverPlatform] + " [Failed]")
                 })
         }
         resolve()
