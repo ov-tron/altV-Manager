@@ -1,5 +1,5 @@
 ***
-## Resource: Multi Resource
+## Resource: altV Manager
 ## Developer(s): OvileAmriam
 ***
 
@@ -21,6 +21,8 @@
   > ***After installation launch your server via `server-launcher` and it will automate everything up!***
 
 ### Usage:
-  - **You can create resource category under `resources` folder enbounded within `[]`; Example: `[YourCategoryHere]`.**
-  - **Start your server via `server-launcher` and it will auto-detect and setup everything for you!**
-  - **WARNING: _Starting server via `altv-server` won't detect the resource categories!_**
+  > ***You can create resource category under `resources` folder enbounded within `[]`; Example: `[YourCategoryHere]`.***
+
+  > ***Start your server via `server-launcher` and it will auto-detect and setup everything for you!***
+
+  > ***WARNING: _Starting server via `altv-server` won't detect the resource categories!_***
