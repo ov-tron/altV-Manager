@@ -5,6 +5,7 @@
     "author": "OvileAmriam",
     "type": "module",
     "dependencies": {
+        "lodash": "^4.17.20",
         "download": "^8.0.0"
     },
     "scripts": {
