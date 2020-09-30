@@ -41,7 +41,7 @@ async function onLaunchServer() {
     const serverUpdateData = await serverUpdater.getServerUpdateData()
     if (serverUpdateData && !serverUpdateData[0]) {
         serverLogger.displayServerLog("\n==> Server update available!")
-        serverLogger.displayServerLog("\n\n==> Hint: Use npm run server:install to update to latest build!\n")
+        serverLogger.displayServerLog("\n\n==> Hint: Use npm run server:install to update to latest build!\n\n")
     }
     await runAll(["server:update"], {parallel: false})
         .then(async () => {
