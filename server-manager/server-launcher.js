@@ -16,7 +16,7 @@ const fs = require("fs")
 const path = require("path")
 const runAll = require("npm-run-all")
 const serverLogger = require("./server-logger.js")
-const serverLauncherFormat, serverLauncherPrefix = serverLogger.getServerLauncherData()
+const serverLauncherData = serverLogger.getServerLauncherData()
 
 
 /******************************
@@ -56,7 +56,7 @@ async function onLaunchServer() {
                 })
             })
             await new Promise((resolve, reject) => {
-                fs.writeFile(serverLauncherFormat, serverLauncherPrefix + "\n" + launcherCommand, () => {
+                fs.writeFile(serverLauncherData[1], serverLauncherData[2] + "\n" + launcherCommand, () => {
                     resolve()
                 })
             })

@@ -15,7 +15,7 @@
 const download = require("download")
 const serverLogger = require("./server-logger.js")
 const serverPlatform = serverLogger.getServerPlatform()
-const serverLauncherFormat, serverLauncherPrefix = serverLogger.getServerLauncherData()
+const serverLauncherData = serverLogger.getServerLauncherData()
 const serverAssets = [
     /*
     {
@@ -89,7 +89,7 @@ async function onInstallServer() {
     })
     serverLogger.displayServerLog("\n")
     await new Promise((resolve, reject) => {
-        fs.writeFile(serverLauncherFormat, serverLauncherPrefix + "\n" + launcherCommand, () => {
+        fs.writeFile(serverLauncherData[1], serverLauncherData[2] + "\n" + launcherCommand, () => {
             resolve()
         })
     })
