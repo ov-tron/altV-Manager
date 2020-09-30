@@ -23,6 +23,6 @@
 ### Usage:
   - **You can create resource category under `resources` folder enbounded within `[]`; Example: `[YourCategoryHere]`.**
   
-  - **Start your server via `server-launcher` and it will auto-detect and setup everything for you!**
+  - **Launch your server via `server-launcher` and it will auto-detect and setup/update everything for you!**
 
-  - **WARNING: _Starting server via `altv-server` won't detect the resource categories!_**
+  - ***Warning: Launching server via `altv-server` won't detect the resource categories!***
