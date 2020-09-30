@@ -19,6 +19,20 @@ function getServerPlatform() {
 }
 
 
+/***********************************************
+ * Function: Retrieves Server Launcher's Data *
+************************************************/
+
+function getServerLauncherData() {
+
+    const serverPlatform = getServerPlatform()
+    var launcherFormat = serverPlatform === "windows" ?  "server-launcher.bat" : "server-launcher.sh"
+    var launcherPrefix = serverPlatform === "windows" ?  "@echo off\ncall npm run start --silent" : "#!/bin/bash\nset echo off\nnpm run start --silent"
+    return launcherFormat, launcherPrefix
+
+}
+
+
 /**********************************
  * Function: Displays Server Log *
 ***********************************/
@@ -37,6 +51,7 @@ function displayServerLog(log) {
 module.exports = {
 
     getServerPlatform,
+    getServerLauncherData,
     displayServerLog
 
 }

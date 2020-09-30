@@ -15,6 +15,7 @@
 const download = require("download")
 const serverLogger = require("./server-logger.js")
 const serverPlatform = serverLogger.getServerPlatform()
+const serverLauncherFormat, serverLauncherPrefix = serverLogger.getServerLauncherData()
 const serverAssets = [
     /*
     {
@@ -87,8 +88,11 @@ async function onInstallServer() {
         resolve()
     })
     serverLogger.displayServerLog("\n")
-
-    // TODO: CREATE HERE `server-launcher` using script :D not within respo
+    await new Promise((resolve, reject) => {
+        fs.writeFile(serverLauncherFormat, serverLauncherPrefix + "\n" + launcherCommand, () => {
+            resolve()
+        })
+    })
     serverLogger.displayServerLog("\n\n==> Server successfully installed! [Hint: Use server-launcher to launch your server!]")
     process.exit(0)
 
