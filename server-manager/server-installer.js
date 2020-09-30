@@ -90,7 +90,7 @@ async function onInstallServer() {
     })
     serverLogger.displayServerLog("\n")
     await new Promise((resolve, reject) => {
-        fs.writeFile(serverLauncherData[1], serverLauncherData[2] + "\n" + serverLauncherData[3], () => {
+        fs.writeFile(serverLauncherData[0], serverLauncherData[1] + "\n" + serverLauncherData[2], () => {
             resolve()
         })
     })

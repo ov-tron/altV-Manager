@@ -47,7 +47,7 @@ async function onLaunchServer() {
                         for(var i = 0; i < directoryList.length; i++) {
                             const directoryName = directoryList[i]
                             if (directoryName[0] == "[" && directoryName[directoryName.length - 1] == "]") {
-                                serverLauncherData[3] = serverLauncherData[3] + " --extra-res-folder resources/" + directoryName
+                                serverLauncherData[2] = serverLauncherData[2] + " --extra-res-folder resources/" + directoryName
                             }
                         }
                     }
@@ -55,7 +55,7 @@ async function onLaunchServer() {
                 })
             })
             await new Promise((resolve, reject) => {
-                fs.writeFile(serverLauncherData[1], serverLauncherData[2] + "\n" + serverLauncherData[3], () => {
+                fs.writeFile(serverLauncherData[0], serverLauncherData[1] + "\n" + serverLauncherData[2], () => {
                     resolve()
                 })
             })
