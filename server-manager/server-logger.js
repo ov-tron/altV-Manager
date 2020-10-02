@@ -12,7 +12,7 @@
  * Function: Retrieves Server's Platform *
 *******************************************/
 
-function getServerPlatform() {
+export function getServerPlatform() {
 
     return process.platform === "win32" ? "windows" : "linux"
     
@@ -23,7 +23,7 @@ function getServerPlatform() {
  * Function: Retrieves Server's Launcher Data *
 ************************************************/
 
-function getServerLauncherData() {
+export function getServerLauncherData() {
 
     const serverPlatform = getServerPlatform()
     const launcherFormat = serverPlatform === "windows" ?  "server-launcher.bat" : "server-launcher.sh"
@@ -38,21 +38,8 @@ function getServerLauncherData() {
  * Function: Displays Server Log *
 ***********************************/
 
-function displayServerLog(log) {
+export function displayServerLog(log) {
 
     return process.stdout.write("\x1b[93m" + log + "\x1b[39m")
-
-}
-
-
-/************
- * Exports *
-*************/
-
-module.exports = {
-
-    getServerPlatform,
-    getServerLauncherData,
-    displayServerLog
 
 }

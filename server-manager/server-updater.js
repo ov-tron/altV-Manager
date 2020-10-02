@@ -12,19 +12,19 @@
  * Imports *
 *************/
 
-const fs = require("fs")
-const lodash = require("lodash")
-const download = require("download")
-const serverLogger = require("./server-logger.js")
+import fs from "fs"
+import lodash from "lodash"
+import download from "download"
+import * as serverLogger from "./server-logger.js"
+import { serverAssets } from "./server-assets.js"
 const serverPlatform = serverLogger.getServerPlatform()
-const serverAssets = require("./server-assets.js").serverAssets
 
 
 /*********************************************
  * Function: Retrieves Server's Update Data *
 **********************************************/
 
-async function getServerUpdateData() {
+export async function getServerUpdateData() {
 
     var isServerUpdated = false, updateAssetIndex = false
     for (var assetIndex = 0; assetIndex < serverAssets.length; assetIndex++) {
@@ -50,16 +50,5 @@ async function getServerUpdateData() {
     } else {
         return false
     }
-
-}
-
-
-/************
- * Exports *
-*************/
-
-module.exports = {
-
-    getServerUpdateData
 
 }

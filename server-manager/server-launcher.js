@@ -12,11 +12,11 @@
  * Imports *
 *************/
 
-const fs = require("fs")
-const path = require("path")
-const runAll = require("npm-run-all")
-const serverLogger = require("./server-logger.js")
-const serverUpdater = require("./server-updater.js")
+import fs from "fs"
+import path from "path"
+import runAll from "npm-run-all"
+import * as serverLogger from "./server-logger.js"
+import * as serverUpdater from "./server-updater.js"
 const serverLauncherData = serverLogger.getServerLauncherData()
 
 

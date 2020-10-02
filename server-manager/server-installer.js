@@ -12,13 +12,13 @@
  * Imports *
 *************/
 
-const fs = require("fs")
-const download = require("download")
-const serverLogger = require("./server-logger.js")
-const serverUpdater = require("./server-updater.js")
+import fs from "fs"
+import download from "download"
+import * as serverLogger from "./server-logger.js"
+import * as serverUpdater from "./server-updater.js"
+import { serverAssets } from "./server-assets.js"
 const serverPlatform = serverLogger.getServerPlatform()
 const serverLauncherData = serverLogger.getServerLauncherData()
-const serverAssets = require("./server-assets.js").serverAssets
 
 
 /******************************
