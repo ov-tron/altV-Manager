@@ -10,7 +10,7 @@
 
   > ***Automated resource category detector.***
 
-  > ***Automated server installer, updater and launcher.***
+  > ***Automated crossplatform server installer, updater and launcher.***
 
 ### Dependencies:
   - **NodeJS [https://nodejs.org/en/download/current]**
