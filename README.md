@@ -13,7 +13,7 @@
   > ***Automated crossplatform server installer, updater and launcher.***
 
 ### Dependencies:
-  - **NodeJS [https://nodejs.org/en/download/current]**
+  - **[NodeJS v14+](https://nodejs.org/en/download/current)**
 
 ### Installation:
   > ***Install your server using `npm run server:install`.***

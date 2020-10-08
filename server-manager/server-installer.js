@@ -4,7 +4,7 @@
  * Author: OvileAmriam
  * Developer: -
  * DOC: 25/09/2020 (OvileAmriam)
- * Desc: Automated Server Installer/Updater/Launcher
+ * Desc: Automated Server Manager
 ***************************************************************/
 
 
@@ -29,12 +29,12 @@ async function onInstallServer() {
 
     console.clear()
     serverLogger.displayServerLog("\n***************************************************************")
-    serverLogger.displayServerLog("\n* Script: server-installer")
+    serverLogger.displayServerLog("\n* Script: Server Installer")
     serverLogger.displayServerLog("\n* Server: -")
     serverLogger.displayServerLog("\n* Author: OvileAmriam")
     serverLogger.displayServerLog("\n* Developer: -")
     serverLogger.displayServerLog("\n* DOC: 25/09/2020 (OvileAmriam)")
-    serverLogger.displayServerLog("\n* Desc: Automated Server Installer/Updater/Launcher")
+    serverLogger.displayServerLog("\n* Desc: Automated Server Manager")
     serverLogger.displayServerLog("\n***************************************************************")
 
     await serverUpdater.getServerUpdateData()

@@ -4,7 +4,7 @@
  * Author: OvileAmriam
  * Developer: -
  * DOC: 25/09/2020 (OvileAmriam)
- * Desc: Automated Server Installer/Updater/Launcher
+ * Desc: Automated Server Manager
 ***************************************************************/
 
 
