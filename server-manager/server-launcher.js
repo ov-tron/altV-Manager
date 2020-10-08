@@ -45,9 +45,8 @@ async function onLaunchServer() {
     }
     await runAll(["server:update"], {parallel: false})
         .then(async () => {
-            serverLogger.displayServerLog("\n==> Server successfully launched!\n\n")
             await new Promise((resolve, reject) => {
-                fs.readdir(path.join(__dirname, '../resources'), (error, directoryList) => { 
+                fs.readdir(path.join(path.resolve(), "/resources"), (error, directoryList) => { 
                     if (!error) {
                         for(var i = 0; i < directoryList.length; i++) {
                             const directoryName = directoryList[i]
@@ -64,6 +63,9 @@ async function onLaunchServer() {
                     resolve()
                 })
             })
+        })
+        .then(() => {
+            serverLogger.displayServerLog("\n==> Server successfully launched!\n\n")
         })
         .catch(() => {
             serverLogger.displayServerLog("\n==> Server launch failed!\n\n")
