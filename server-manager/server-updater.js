@@ -42,6 +42,9 @@ export async function getServerUpdateData() {
                                 isServerUpdated = true
                             }
                         })
+                        .catch(() => {
+                            isServerUpdated = true
+                        })
                 }
                 resolve()
             })
