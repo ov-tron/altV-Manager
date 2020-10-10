@@ -13,19 +13,19 @@
  * Imports *
 *************/
 
-import * as alt from "alt-server"
+import { altManager } from "../../../[Library]/altv_library/server"
 
 
 /******************************
  * Events: On Resource Start *
 *******************************/
 
-alt.on("resourceStart", function(errored) {
+altManager.on("resourceStart", function(errored) {
 
     if (!errored) {
-        alt.log("[Example Resource]: Resource started successfully!")
+        altManager.log("[Example Resource]: Resource started successfully!")
     } else {
-        alt.log("[Example Resource]: Failed to start resource!")
+        altManager.log("[Example Resource]: Failed to start resource!")
     }
 
 })
