@@ -1,10 +1,10 @@
 /***************************************************************
- * Script: server-wrapper: client: exports.js
+ * Script: altv_library: client: scripts: events.js
  * Server: -
  * Author: OvileAmriam
  * Developer: -
  * DOC: 25/09/2020 (OvileAmriam)
- * Desc: Server Wrapper
+ * Desc: altV Library
 ***************************************************************/
 
 
@@ -12,6 +12,4 @@
  * Imports *
 *************/
 
-import * as core from "./scripts/core.js"
-import "./scripts/events.js"
-export const altManager = core.altManager
+import { altManager } from "./core.js"

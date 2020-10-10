@@ -1,10 +1,10 @@
 /***************************************************************
- * Script: server-wrapper: server: exports.js
+ * Script: altv_library: client: exports.js
  * Server: -
  * Author: OvileAmriam
  * Developer: -
  * DOC: 25/09/2020 (OvileAmriam)
- * Desc: Server Wrapper
+ * Desc: altV Library
 ***************************************************************/
 
 
