@@ -1,5 +1,5 @@
 /***************************************************************
- * Script: altv_library: client: exports.js
+ * Script: altv_library: client: index.js
  * Server: -
  * Author: OvileAmriam
  * Developer: -
