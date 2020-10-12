@@ -4,13 +4,15 @@
 ***
 
 ### Keypoints:
-  - **Multi resource/categorization replication on alt:V based on MTA.**
+  :heavy_multiplication_x: **Custom alt:V Library** [For extra added functionalities to native alt:V library]
 
-  - **Enhances project structure by resource categorization.**
+  :heavy_check_mark: **Multi resource/categorization replication on alt:V based on MTA.**
 
-  - **Automated resource category detector.**
+  :heavy_check_mark: **Enhances project structure by resource categorization.**
 
-  - **Automated crossplatform server installer, updater and launcher.**
+  :heavy_check_mark: **Automated resource category detector.**
+
+  :heavy_check_mark: **Automated crossplatform server installer, updater and launcher.**
 
 ### Dependencies:
   - **[NodeJS v14+](https://nodejs.org/en/download/current)**
