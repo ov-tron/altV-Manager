@@ -13,4 +13,11 @@
 *************/
 
 import * as altClient from "alt-client"
-export const altManager = Object.create(altClient)
+import { cloneObject } from "../../utilities/shared.js"
+
+
+/************
+ * Exports *
+*************/
+
+export const altManager = cloneObject(altClient)

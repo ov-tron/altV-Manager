@@ -14,4 +14,10 @@
 
 import * as core from "./scripts/core.js"
 import "./scripts/events.js"
+
+
+/************
+ * Exports *
+*************/
+
 export const altManager = core.altManager

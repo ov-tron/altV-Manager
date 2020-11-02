@@ -13,4 +13,11 @@
 *************/
 
 import * as altServer from "alt-server"
-export const altManager = Object.create(altServer)
+import { cloneObject } from "../../utilities/shared.js"
+
+
+/************
+ * Exports *
+*************/
+
+export const altManager = cloneObject(altServer)
