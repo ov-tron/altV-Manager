@@ -1,9 +1,16 @@
 /***************************************************************
- * Resource: Example Resource
- * Script: client: client.js
- * Server: Pacivic Roleplay
+ * Resource: Resource Loader
+ * Script: starter: server.js
+ * Server: -
  * Author: OvileAmriam
  * Developer: -
  * DOC: 23/09/2020 (OvileAmriam)
- * Desc: Client Sided
+ * Desc: Server Sided Starter
 ***************************************************************/
+
+
+/************
+ * Imports *
+*************/
+
+import "../handlers/loader.js"
