@@ -14,6 +14,7 @@
 
 import * as core from "./scripts/core.js"
 import "./scripts/events.js"
+import "./scripts/webviews.js"
 
 
 /************
