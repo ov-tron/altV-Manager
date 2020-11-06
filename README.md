@@ -4,7 +4,7 @@
 ***
 
 ### Keypoints:
-  :heavy_check_mark: **Custom alt:V Library** [For extra added functionalities to native alt:V library]
+  :heavy_check_mark: **Custom alt:V Library.** [For extra added functionalities to native alt:V library]
 
   :heavy_check_mark: **Multi resource/categorization replication on alt:V based on MTA.**
 
